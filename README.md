@@ -28,3 +28,6 @@ Issue the command below <br />
 npm install
 npm start
 ````
+
+### Example Postman collection path: <br />
+````./docs/PlayerApi.postman_collection.json````
