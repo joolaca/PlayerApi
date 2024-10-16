@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: npm run dev
+    env_file:
+      - .env
+    environment:
+      - IS_DOCKER=true
+
+volumes:
+  mongodb_data:
