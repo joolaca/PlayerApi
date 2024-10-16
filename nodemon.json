@@ -8,8 +8,7 @@
     "filter",
     "models",
     "routes",
-    "service",
-    "tests"
+    "service"
   ],
   "ext": "js,json",
   "exec": "node server.js"
